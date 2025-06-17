@@ -1,32 +1,11 @@
 #!/usr/bin/env bash
 
 # exit on errors
-# set -e
+set -e
+source ./utils.sh
 
 # Configuration
 NUM_CORES=20
-
-# colors
-HIGHLIGHT="\e[34m"
-RESET="\e[0m"
-
-# Helpers
-print_msg() {
-    echo -e "${HIGHLIGHT}$1${RESET}"
-}
-
-# run command, display start and complete messages, and display an error message in a similar style if it fails
-run_command() {
-    local msg="[$1]"
-    shift 1
-    print_msg "$msg: Start"
-    if "$@"; then
-        print_msg "$msg: Complete"
-    else
-        print_msg "$msg: Command failed - $*"
-        exit 1
-    fi
-}
 
 # Update system
 print_msg "[System Update]: Start"

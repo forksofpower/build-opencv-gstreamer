@@ -1,19 +1,11 @@
 #!/usr/bin/env bash
+source ./utils.sh
 
 # exit on errors
 set -e
 
 # Configuration
 NUM_CORES=20
-
-# colors
-HIGHLIGHT="\e[34m"
-RESET="\e[0m"
-
-# Helpers
-print_msg() {
-    echo -e "${HIGHLIGHT}$1${RESET}"
-}
 
 # NOTE: Assume yay for now but the arguments are the same for pacman
 # Update system
